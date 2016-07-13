@@ -1,12 +1,14 @@
 # work-in-progress
 
 Team Reporting System
+---
 - Reports are categorised by the 4 departments/functions
 - Comment system supported
 - Email notification (feature is still in early development)
 - Download Reports as CSV or Excel (with or without filtering)
 
 Instructions
+---
 1. **git clone https://github.com/jiayeerawr/work-in-progress.git**
   - Run steps 2 and 3 for your repository if it will be public so that you will not push private files
   - Otherwise, skip them so that your private files may be pushed to your server
