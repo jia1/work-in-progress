@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' 
+    	http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>Dear <%= @report.function %> Team, </p>
+    <p>You have a new comment in the following report: </p>
+    <p><h3><%= @report.title %></h3></p>
+    <p><h3><%= @report.date %></h3></p>
+    <p><strong><%= @comment.title %></strong></p>
+    <p>"<%= @comment.text %>"</p>
+  </body>
+</html>

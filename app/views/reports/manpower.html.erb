@@ -1,0 +1,16 @@
+<% @TITLE = 'Manpower' %>
+<% provide(:title, @TITLE) %>
+<h1><%= @TITLE %></h1>
+
+<%= render 'top' %>
+
+<%= render 'table' %>
+
+<div class="row">
+  <div class="col s12 left-align">
+    <%= link_to "Download CSV", manpower_path(format: "csv"), 
+      class: "waves-effect waves-light btn-large" %> 
+    <%= link_to "Download Excel", manpower_path(format: "xls"), 
+      class: "waves-effect waves-light btn-large" %>
+  </div>
+</div>

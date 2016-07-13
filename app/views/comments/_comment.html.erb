@@ -1,0 +1,9 @@
+<div class="row">
+	<h5><%= comment.title %></h5>
+	<blockquote style="border-left-color: skyblue">
+		<%= comment.text %>
+	</blockquote>
+  <%= link_to 'Delete Comment', [comment.report, comment],
+  	method: :delete,
+  	data: { confirm: 'Are you sure?' } %>
+</div>

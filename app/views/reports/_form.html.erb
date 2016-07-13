@@ -1,0 +1,61 @@
+<div class="row">
+  <div class="col s12">
+    <%= form_for @report do |f| %>
+      <% if @report.errors.any? %>
+        <div id="error_explanation">
+          <h4>
+            <%= pluralize(@report.errors.count, "error") %> prohibited this article from being saved: 
+          </h4>
+          <ul>
+            <% @report.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+        <%= f.label :date %>
+        <%= f.text_field :date, :class => 'datepicker' %>
+      <% @FUNCTION = [
+        ['Finance', 'Finance'], ['Logistics', 'Logistics'], 
+        ['Manpower', 'Manpower'], ['Publicity', 'Publicity']] %>
+      <p>
+        <%= f.label :function %>
+        <%= f.select :function, options_for_select(@FUNCTION, :function => f.object.function) %>
+      </p>
+      <p>
+        <%= f.label :title %><br>
+        <%= f.text_field :title %>
+      </p>
+      <p>
+        <%= f.label :text %><br>
+        <%= f.text_area :text, class: "materialize-textarea" %>
+      <p>
+      <div class="center-align">
+        <%= f.submit 'Submit', 
+          class: "waves-effect waves-light btn-large" %> 
+        <%= link_to 'Back', :back, 
+          class: "waves-effect waves-light btn-large" %>
+        <%= link_to 'Home', reports_path, 
+          class: "waves-effect waves-light btn-large" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function() {
+    $('select').material_select();
+  });
+
+  $('.datepicker').pickadate({
+    selectMonths: true,
+    selectYears: 1
+  });
+</script>
+
+<style>
+  .picker__box {
+    float: top;
+  }
+</style>
